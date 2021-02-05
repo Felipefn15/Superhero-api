@@ -30,6 +30,8 @@ class Hero(restful.Resource):
         parser.add_argument("image", type=str)
         parser.add_argument("favorite", type=int)
         args = parser.parse_args()
+        if args.favorite is None:
+            args.favorite = 0
         ms = Mysql()
         query = ms.build_query('postHero.sql',args.name,args.description,args.favorite,args.image)
         results = ms.run_insert(query)

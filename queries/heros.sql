@@ -6,4 +6,4 @@ select
 from Hero
 where
     ('{0}' = '' or name like '%{0}%') and
-    ('{1}' = '' or favorite = true)
+    ('{1}' = 3 or favorite = '{1}')

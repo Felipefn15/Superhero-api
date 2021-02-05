@@ -1,7 +1,7 @@
 UPDATE Hero
     SET 
-        Description = '{1}', 
-        Favorite = '{2}',
-        Image = '{3}'
+        Description = IF('{1}' != '', '{1}',Description), 
+        Favorite = IF('{2}' != '', '{2}',Favorite), 
+        Image = IF('{3}' != '', '{3}',Image)
 WHERE 
     Name = '{0}'
